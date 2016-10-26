@@ -24,7 +24,6 @@ gMaps.controller('googleDrawingController', ['mapHelper', function(mapHelper) {
       wktCollection.push(jstsPoly);
     }
     console.log(jstsPoly.getCoordinates());
-    console.log(e.overlay.getPath());
     return;
   };
 }]);
