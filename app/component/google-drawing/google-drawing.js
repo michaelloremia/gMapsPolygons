@@ -2,7 +2,7 @@
 
 gMaps.controller('googleDrawingController', ['mapHelper', function(mapHelper) {
   var vm = this;
-  var wktCollection = [];
+  var jstsPolyCollection = [];
   
   vm.onMapOverlayCompleted = function(e){
     if(e.overlay.getPath().getLength() < 3){
@@ -12,16 +12,16 @@ gMaps.controller('googleDrawingController', ['mapHelper', function(mapHelper) {
 
     var jstsPoly = mapHelper.createJstsPolygon(e.overlay);
 
-    if(wktCollection.length >= 1) {
-      var result = mapHelper.jstsCheckIntersection(jstsPoly, wktCollection);
+    if(jstsPolyCollection.length >= 1) {
+      var result = mapHelper.jstsCheckIntersection(jstsPoly, jstsPolyCollection);
       if(!result) {
-        wktCollection.push(jstsPoly);
+        jstsPolyCollection.push(jstsPoly);
       } else {
         e.overlay.setMap(null);
         return;
       }
     } else {
-      wktCollection.push(jstsPoly);
+      jstsPolyCollection.push(jstsPoly);
     }
     console.log(jstsPoly.getCoordinates());
     return;

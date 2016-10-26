@@ -3,25 +3,6 @@
 gMaps.factory('mapHelper', function () {
     var geometryFactory = new jsts.geom.GeometryFactory();
     return {
-        googlePolyToWKT(poly) {
-            console.log('converting poly to wkt');
-            var wicket = new Wkt.Wkt();
-
-            var wkt = wicket.fromObject(poly);
-            wkt = wicket.write();
-            return wkt;
-        },
-        checkInterSection(wkt, wktCollection) {
-            var wktReader = new jsts.io.WKTReader();
-            var geom1 = wktReader.read(wkt);
-            wktCollection.forEach(function(a,b) {
-                var geom2 = wktReader.read(a);
-                if (geom2.intersects(geom1)) {
-                    return true;
-                }
-            });
-            return false;
-        },
         jstsCheckIntersection(jstsPoly, jstsPolyCollection) {
             var result = jstsPolyCollection.filter(function (curPolygon) {
                 var intersection = jstsPoly.intersection(curPolygon);
