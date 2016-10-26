@@ -1,0 +1,14 @@
+<div ng-controller="googleDrawingController as vm">
+    <ng-map zoom="10" center="13.2548, 123.6861"
+        map-type-id="ROADMAP"
+        street-view-control-options="{position: 'LEFT_CENTER'}">
+        <drawing-manager
+        on-overlaycomplete="vm.onMapOverlayCompleted()"
+        drawing-control-options="{position: 'TOP_CENTER',drawingModes:['polygon']}"
+        drawingControl="true"
+        drawingMode="null"
+        rectangleOptions="{fillColor:'red'}"
+        circleOptions="{fillColor: 'red'}" >
+        </drawing-manager>
+    </ng-map>
+</div>

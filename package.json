@@ -1,0 +1,26 @@
+{
+  "name": "g-maps",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/http-server ./app"
+  },
+  "author": "michael loremia",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "jsts": "^1.2.1",
+    "ngmap": "git+https://github.com/allenhwkim/angularjs-google-maps.git",
+    "wicket": "^1.3.2"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-compile-dependencies": "^1.0.12",
+    "gulp-inject": "^4.1.0",
+    "gulp-webserver": "^0.9.1",
+    "http-server": "^0.9.0"
+  }
+}
